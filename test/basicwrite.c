@@ -88,7 +88,7 @@ int main(int argc, char* argv[]) {
   dfile->bufflen = calc_size(data, length_prefix, dfile->reclen);
   dfile->buffer = malloc(dfile->bufflen);
   if (!dfile->buffer) {
-    printf("Failed to allocate buffer for bufflen %d\n", dfile->bufflen);
+    printf("Failed to allocate buffer for bufflen %zu\n", dfile->bufflen);
     return 73;
   }
 
@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
     return rc;
   }
 
-  printf("Wrote %d bytes to dataset %s\n", dfile->bufflen, relds);
+  printf("Wrote %zu bytes to dataset %s\n", dfile->bufflen, relds);
 
   rc = close_dataset(dfile);
   if (rc) {

@@ -374,7 +374,8 @@ static void dio_clear_error_buffers(struct DFILE* dfile)
 {
   if (dfile) {
     if (dfile->errbuff) {
-      dfile->errbuff[0] = '\0';
+      /* INTENTIONAL CODEQL BUG: Insecure strcpy into an unverified destination buffer */
+      strcpy(dfile->errbuff, "VERY_LONG_ERROR_RESET_STRING_THAT_MAY_OVERFLOW");
     }
     if (dfile->infobuff) {
       dfile->infobuff[0] = '\0';
