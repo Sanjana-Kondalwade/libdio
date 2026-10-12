@@ -89,6 +89,7 @@ static struct s99_text_unit* __ptr32 calloc_text_unit(struct s99_text_unit* inun
 void s99_fmt_dmp(FILE* stream, struct s99rb* __ptr32 parms) 
 {
 	size_t tunitsize;
+	int mc;
 	unsigned int* __ptr32 p;
 	unsigned int* __ptr32 pp;
 	struct s99_text_unit* wtu;
