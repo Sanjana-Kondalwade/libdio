@@ -101,7 +101,7 @@ int parse_configuration(cJSON *root, char *in_dsname, char *in_llq,
     cJSON *dsname_type = cJSON_GetObjectItem(dsname_object, "type");
     cJSON *dsname_codepage = cJSON_GetObjectItem(dsname_object, "codepage");
 #ifdef DEBUG
-    fprintf(stderr, "Found codepage and type: %s %s\n", dsname_codepage->valuestring, dsname_type->valuestring);
+    fprintf(stderr, "Found codepage and type: %d %f\n", dsname_codepage->valuestring, dsname_type->valuestring);
 #endif
 
     if (dsname_extension != NULL)
